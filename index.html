@@ -71,14 +71,13 @@ function setZone(zone, btn) {
 
 async function loadProperties() {
   try {
-    const res = await fetch('data/properties.json');
+    // Membaca senarai fail dari direktori atau fail indeks
+    const res = await fetch('data/properties.json'); // Atau ubah cara baca folder
     if(res.ok) {
-      const data = await res.json();
-      // Ambil senarai dari dalam objek properties yang disimpan oleh Decap CMS
-      properties = data.properties || [];
+      properties = await res.json();
     }
   } catch(e) {
-    console.log('Belum ada fail data JSON atau ralat memuat turun.');
+    console.log('Ralat memuat turun data.');
   }
   render();
 }
