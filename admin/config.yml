@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: jacksonlisting/jacksonlisting
+  name: git-gateway
   branch: main
-  site_id: jacksonlisting.netlify.app
   
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
