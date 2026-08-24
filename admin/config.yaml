@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "properties"
+    label: "Hartanah"
+    folder: "data/properties"
+    create: true
+    extension: "json"
+    format: "json"
+    fields:
+      - {name: "name", label: "Nama Property", widget: "string"}
+      - {name: "price", label: "Harga (Contoh: 190,000)", widget: "string"}
+      - {name: "location", label: "Zon / Lokasi", widget: "select", options: ["Sandakan", "Kota Kinabalu", "Tawau"]}
+      - {name: "desc", label: "Deskripsi Pendek", widget: "text"}
+      - {name: "status", label: "Status", widget: "select", options: ["Available", "Booked", "Sold"]}
+      - {name: "image", label: "Gambar Hartanah", widget: "image"}
