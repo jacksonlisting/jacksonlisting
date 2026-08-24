@@ -73,7 +73,9 @@ async function loadProperties() {
   try {
     const res = await fetch('data/properties.json');
     if(res.ok) {
-      properties = await res.json();
+      const data = await res.json();
+      // Ambil senarai dari dalam objek properties yang disimpan oleh Decap CMS
+      properties = data.properties || [];
     }
   } catch(e) {
     console.log('Belum ada fail data JSON atau ralat memuat turun.');
